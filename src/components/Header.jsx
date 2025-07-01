@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cyberlogo from '../assets/cyberlogo.jpg';
  // Make sure this image is in your /src folder
 
 const Header = () => {
@@ -37,8 +38,8 @@ const Header = () => {
       {/* Right: Cyber Security Club Section */}
       <div className="mt-6 sm:mt-0 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
         {/* Logo */}
-        <img src="https://iiitkottayam.ac.in/data/images/club//csyclub-light.png"
-        alt="Cyber Security Club Logo" className="w-20 md:w-25 object-contain rounded-lg drop-shadow-xl brightness-110 contrast-125 transition-transform duration-300 hover:scale-105" />
+        <img src={cyberlogo}
+        alt="Cyber Security Club Logo" className=" w-20 h-20 object-cover rounded-full drop-shadow-xl brightness-110 contrast-125 transition-transform duration-300 hover:scale-105" />
 
         {/* Text */}
         <div className="text-center sm:text-left">
