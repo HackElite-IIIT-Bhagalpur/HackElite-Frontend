@@ -1,7 +1,52 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 3D Rotation Animation */
+@keyframes rotate3D {
+  0% {
+    transform: rotateX(20deg) rotateY(20deg);
+  }
+  50% {
+    transform: rotateX(-20deg) rotateY(-20deg);
+  }
+  100% {
+    transform: rotateX(20deg) rotateY(20deg);
+  }
+}
+
+.animate-rotate3D {
+  animation: rotate3D 3s ease-in-out infinite;
+  display: inline-block;
+  perspective: 1000px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* src/components/EventsSection.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html {
+  scroll-behavior: smooth;
 }
