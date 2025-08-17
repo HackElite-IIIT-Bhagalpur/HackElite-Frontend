@@ -1,7 +1,10 @@
-# 🚀 cyber-page
+# 🚀 HackElite Website
 
-A fast, minimal React + Vite starter focused on modern frontend dev: Tailwind CSS + DaisyUI for styling, Zustand for state management, React Router for routing, and Axios for HTTP.
----
+    Cyber Official Club Website, HackElite, Indian Institute of Information Technology, Bhagalpur
+
+    Labs, Cyber Contents, Red Teaming, Blue Teaming, Practical Hands-on
+
+
 ## Quick start
 
 ```bash
@@ -53,13 +56,5 @@ react-router-dom — routing.
 axios — HTTP client.
 react-icons — icon library.
 tailwind-scrollbar-hide — helper plugin for hiding scrollbars.
-
-
-DevDependencies:
-
-@vitejs/plugin-react — react plugin for vite (fast refresh).
-eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh — linting and hook rules.
-postcss, autoprefixer — for Tailwind processing.
-Type definitions: @types/react, @types/react-dom.
 
 
