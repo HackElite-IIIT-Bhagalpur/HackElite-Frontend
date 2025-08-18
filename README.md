@@ -1,12 +1,60 @@
-# React + Vite
+# 🚀 HackElite Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    Cyber Official Club Website, HackElite, Indian Institute of Information Technology, Bhagalpur
 
-Currently, two official plugins are available:
+    Labs, Cyber Contents, Red Teaming, Blue Teaming, Practical Hands-on
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Quick start
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# clone
+git clone https://github.com/your-username/cyber-page.git
+cd cyber-page
+
+# install
+npm install
+
+# dev server
+npm run dev
+
+.env
+VITE_API_BASE_URL=https://api.example.com
+VITE_APP_TITLE=Cyber Page
+
+
+
+Project structure
+cyber-page/
+├── public/                 # static assets (favicons, robots, etc.)
+├── src/
+│   ├── assets/             # images/fonts
+│   ├── components/         # reusable UI components (Button, Card, Navbar)
+│   ├── features/           # domain-specific logic (e.g., auth, projects)
+│   ├── pages/              # route-level components (Home, About, Contact)
+│   ├── routes/             # routing definitions
+│   ├── store/              # zustand stores
+│   ├── styles/             # tailwind base files (index.css)
+│   ├── utils/              # helpers, api client (axios instance)
+│   ├── App.jsx             # app root
+│   └── main.jsx            # entry: react-dom render + router + provider
+├── .eslintrc.cjs
+├── tailwind.config.cjs
+├── postcss.config.cjs
+├── vite.config.js
+├── package.json
+└── README.md
+
+Dependencies (as in package.json):
+
+react, react-dom — UI library.
+vite — build/dev tool (fast).
+tailwindcss, @tailwindcss/vite — Tailwind integration with Vite.
+daisyui — component plugin on top of Tailwind.
+zustand — minimal global state management.
+react-router-dom — routing.
+axios — HTTP client.
+react-icons — icon library.
+tailwind-scrollbar-hide — helper plugin for hiding scrollbars.
+
+
