@@ -1,113 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import cyberlogo from '../assets/cyberlogo.jpg';
- // Make sure this image is in your /src folder
+import { Menu, X } from "lucide-react";
+import cyberlogo from "../assets/cyberlogo.jpg";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuClick = () => setIsOpen(false);
+
   return (
-    <header className="sticky top-0 z-50 flex flex-col sm:flex-row justify-between items-center px-5 py-4 bg-[#0d124b] shadow-md backdrop-blur-md">
-      
-      {/* Left: Animated IIIT-BH */}
-      <h1 className="flex flex-wrap justify-center text-4xl md:text-6xl font-extrabold text-white">
-        {["I", "I", "I", "T", "-", "B", "H"].map((char, i) => (
-          <span
-            key={i}
-            style={{ animationDelay: `${i * 150}ms` }}
-            className={`inline-block animate-rotate3D transform transition duration-500 hover:scale-125 
-              ${char === "B" || char === "H"
-                ? "text-pink-400"
-                : "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-green-400"}
-              drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mx-1`}
-          >
-            {char}
-          </span>
-        ))}
-      </h1>
+    <header className="sticky top-0 z-50 bg-gray-100 shadow-md backdrop-blur-md py-0 md:py-3">
+      <div className="flex justify-center items-center px-4 py- md:px-6 md:py-2">
+        {/* Left: IIIT-BH Logo Text */}
+        {/* <h1 className="flex flex-wrap text-2xl md:text-4xl font-extrabold text-white">
+          {["I", "I", "I", "T", "-", "B", "H"].map((char, i) => (
+            <span
+              key={i}
+              style={{ animationDelay: `${i * 120}ms` }}
+              className={`inline-block animate-rotate3D transition-transform duration-300 hover:scale-110 
+                ${char === "B" || char === "H"
+                  ? "text-pink-400"
+                  : "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-green-400"}
+                drop-shadow-[0_0_8px_rgba(255,255,255,0.7)] mx-[1px]`}
+            >
+              {char}
+            </span>
+          ))}
+        </h1> */}
+       
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-15 text-gray-900 text-sm font-medium">
+          <Link to="/" onClick={handleMenuClick} className="hover:text-blue-400">Home</Link>
+          <Link to="/about" onClick={handleMenuClick} className="hover:text-blue-400">About</Link>
+          <Link to="/services" onClick={handleMenuClick} className="hover:text-blue-400">Services</Link>
+          <Link to="/skills" onClick={handleMenuClick} className="hover:text-blue-400">Skills</Link>
+          <Link to="/eventssection" onClick={handleMenuClick} className="hover:text-blue-400">Event</Link>
+          <Link to="/contact" onClick={handleMenuClick} className="hover:text-blue-400">Contact</Link>
+        </nav>
 
-      {/* Middle: Navigation */}
-      <nav className="mt-4 sm:mt-0 space-x-4 text-white text-sm md:text-base font-medium">
-        <Link to="/" className="hover:text-blue-400">Home</Link>
-        <Link to="/about" className="hover:text-blue-400">About</Link>
-        <Link to="/services" className="hover:text-blue-400">Services</Link>
-        <Link to="/skills" className="hover:text-blue-400">Skills</Link>
-        <Link to="/eventssection" className="hover:text-blue-400">Event</Link>
-        <Link to="/contact" className="hover:text-blue-400">Contact</Link>
-        
-      </nav>
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-black flex item-left focus:outline-none"
+        >
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
 
-      {/* Right: Cyber Security Club Section */}
-      <div className="mt-6 sm:mt-0 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
-        {/* Logo */}
-        <img src={cyberlogo}
-        alt="Cyber Security Club Logo" className=" w-20 h-20 object-cover rounded-full drop-shadow-xl brightness-110 contrast-125 transition-transform duration-300 hover:scale-105" />
-
-        {/* Text */}
-        <div className="text-center sm:text-left">
-          <h1 className="text-sm md:text-lg font-semibold text-blue-400">
-            Cyber Security Club
-          </h1>
-          
-          <p className="text-xs text-green-300 font-medium">IIIT BHAGALPUR</p>
-        </div>
+        {/* Right: Club Logo */}
+        {/* <div className="hidden md:flex items-center space-x-2">
+          <img
+            src={cyberlogo}
+            alt="Cyber Security Club Logo"
+            className="w-12 h-12 object-cover rounded-full drop-shadow-lg transition-transform duration-300 hover:scale-105"
+          />
+          <div>
+            <h1 className="text-sm font-semibold text-blue-400">
+              Cyber Security Club
+            </h1>
+            <p className="text-xs text-green-300 font-medium">IIIT BHAGALPUR</p>
+          </div>
+        </div> */}
       </div>
+
+      {/* Mobile Dropdown (absolute overlay) */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-[#141a5c] text-white rounded-b-xl shadow-lg z-40">
+          <nav className="flex flex-col space-y-3 p-4 text-center font-medium">
+            <Link to="/" onClick={handleMenuClick} className="hover:text-blue-400">Home</Link>
+            <Link to="/about" onClick={handleMenuClick} className="hover:text-blue-400">About</Link>
+            <Link to="/services" onClick={handleMenuClick} className="hover:text-blue-400">Services</Link>
+            <Link to="/skills" onClick={handleMenuClick} className="hover:text-blue-400">Skills</Link>
+            <Link to="/eventssection" onClick={handleMenuClick} className="hover:text-blue-400">Event</Link>
+            <Link to="/contact" onClick={handleMenuClick} className="hover:text-blue-400">Contact</Link>
+          </nav>
+
+          {/* Club Info in Dropdown */}
+          <div className="flex flex-col items-center pb-4 space-y-2">
+            <img
+              src={cyberlogo}
+              alt="Cyber Security Club Logo"
+              className="w-14 h-14 object-cover rounded-full drop-shadow-md"
+            />
+            <div className="text-center">
+              <h1 className="text-sm font-semibold text-blue-400">
+                Cyber Security Club
+              </h1>
+              <p className="text-xs text-green-300 font-medium">IIIT BHAGALPUR</p>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
 
- export default Header;
-
-
-
-
-
-
-// import React from "react";
-
-// const Header = () => {
-//   return (
-//     <header className="sticky top-0 z-50 flex flex-col sm:flex-row justify-between items-center px-5 py-4 bg-[#0d124b] shadow-md backdrop-blur-md">
-      
-//       {/* Left: Animated IIIT-BH */}
-//       <h1 className="flex flex-wrap justify-center text-4xl md:text-6xl font-extrabold text-white">
-//         {["I", "I", "I", "T", "-", "B", "H"].map((char, i) => (
-//           <span
-//             key={i}
-//             style={{ animationDelay: `${i * 150}ms` }}
-//             className={`inline-block animate-rotate3D transform transition duration-500 hover:scale-125 
-//               ${char === "B" || char === "H"
-//                 ? "text-pink-400"
-//                 : "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-green-400"}
-//               drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mx-1`}
-//           >
-//             {char}
-//           </span>
-//         ))}
-//       </h1>
-
-//       {/* Middle: Scrollable Nav */}
-//       <nav className="mt-4 sm:mt-0 space-x-4 text-white text-sm md:text-base font-medium">
-//         <a href="#home" className="hover:text-blue-400">Home</a>
-//         <a href="#about" className="hover:text-blue-400">About</a>
-//         <a href="#services" className="hover:text-blue-400">Services</a>
-//         <a href="#skills" className="hover:text-blue-400">Skills</a>
-//         <a href="#eventssection" className="hover:text-blue-400">Event</a>
-//         <a href="#contact" className="hover:text-blue-400">Contact</a>
-//       </nav>
-
-//       {/* Right: Club Section */}
-//       <div className="mt-6 sm:mt-0 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
-//         <img src="https://iiitkottayam.ac.in/data/images/club//csyclub-light.png"
-//           alt="Cyber Security Club Logo"
-//           className="w-20 md:w-25 object-contain rounded-lg drop-shadow-xl brightness-110 contrast-125 transition-transform duration-300 hover:scale-105"
-//         />
-//         <div className="text-center sm:text-left">
-//           <h1 className="text-sm md:text-lg font-semibold text-blue-400">Cyber Security Club</h1>
-//           <p className="text-xs text-green-300 font-medium">IIIT BHAGALPUR</p>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
+export default Header;
