@@ -19,6 +19,7 @@ export default function App() {
       {/* 👈 This will scroll to top on every route change */}
       <div className="min-h-screen bg-[#0a0f3d] text-white font-sans flex flex-col scroll-smooth">
         <InstituteHeader />
+        <hr className="border-black" />
         <Header />
         <main className="flex-grow">
           <Routes>
