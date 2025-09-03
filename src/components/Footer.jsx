@@ -29,16 +29,16 @@ export default function Footer() {
             The Cyber Security Club at IIIT Bhagalpur is dedicated to fostering awareness, knowledge, and innovation in cybersecurity. Empowering students with practical skills and ethical hacking principles.
           </p>
           <div className="flex space-x-2 text-sm mt-2">
-            <a href="#" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full">
+            <a href="https://www.facebook.com/iiitbh.ac.in" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full">
               <FaFacebookF />
             </a>
-            <a href="#" className="bg-blue-400 hover:bg-blue-300 p-2 rounded-full">
+            <a href="https://x.com/iiitbhagalpur" className="bg-blue-400 hover:bg-blue-300 p-2 rounded-full">
               <FaTwitter />
             </a>
-            <a href="#" className="bg-blue-700 hover:bg-blue-600 p-2 rounded-full">
+            <a href="https://www.linkedin.com/company/tpc-iiitbh/posts/" className="bg-blue-700 hover:bg-blue-600 p-2 rounded-full">
               <FaLinkedinIn />
             </a>
-            <a href="#" className="bg-red-600 hover:bg-red-500 p-2 rounded-full">
+            <a href="https://www.youtube.com/@culturalsocietyiiitbh" className="bg-red-600 hover:bg-red-500 p-2 rounded-full">
               <FaYoutube />
             </a>
           </div>
@@ -48,11 +48,11 @@ export default function Footer() {
         <div>
           <h3 className="text-sm font-semibold mb-2 border-b border-gray-600 pb-1">Quick Links</h3>
           <ul className="space-y-1 text-xs text-gray-300">
-            <li><a href="#" className="hover:text-cyan-400">IIITBH Website</a></li>
-            <li><a href="#" className="hover:text-cyan-400">Academics</a></li>
-            <li><a href="#" className="hover:text-cyan-400">Academic Calendar</a></li>
-            <li><a href="#" className="hover:text-cyan-400">Admissions</a></li>
-            <li><a href="#" className="hover:text-cyan-400">Placements</a></li>
+            <li><a href="https://iiitbh.ac.in/" className="hover:text-cyan-400">IIITBH Website</a></li>
+            <li><a href="https://iiitbh.ac.in/acadmic-affairs" className="hover:text-cyan-400">Academics</a></li>
+            <li><a href="https://iiitbh.ac.in/sites/default/files/2025/Academic_Calendar/index.html" className="hover:text-cyan-400">Academic Calendar</a></li>
+            <li><a href="https://www.iiitbh.ac.in/btech-admission" className="hover:text-cyan-400">Admissions</a></li>
+            <li><a href="https://tnp.iiitbh.ac.in/" className="hover:text-cyan-400">Placements</a></li>
           </ul>
         </div>
 
