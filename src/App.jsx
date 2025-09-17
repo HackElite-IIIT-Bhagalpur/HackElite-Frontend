@@ -20,7 +20,7 @@ export default function App() {
       <div className="min-h-screen bg-[#0a0f3d] text-white font-sans flex flex-col scroll-smooth">
         <InstituteHeader />
         <hr className="border-black" />
-        <Header />
+        {/* <Header /> */}
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
