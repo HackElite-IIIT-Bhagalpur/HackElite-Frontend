@@ -283,7 +283,9 @@ export default function Home() {
 
                 {/* Inner elements */}
                 <div className="absolute w-40 h-40 rounded-full border-2 border-green-500/40">
+                  // do change these alignment as per need
                   <div className="absolute w-24 h-24 rounded-full border-2 border-cyan-500/30"></div>
+                  
                 </div>
 
                 {/* Central hexagon */}
